@@ -47,6 +47,23 @@ config FB_MXC_EDID
      tristate "MXC EDID support"
      default y
 
+config FORCE_HDMI_FIXED_EDID
+	depends on FB_MXC_HDMI
+	bool "Force EDID from external file"
+	help
+	  Force on-chip MXC HDMI controller to adopt EDID read
+	  from external file or static internal kernel table.  
+	  External file must be called /etc/edid.txt and contains
+	  edid data as you extract with command: 
+	  "i2cdump -f -y 1 0x50" (only data, not address or strings)
+
+config FORCE_HDMI_HP_DETECT
+	depends on FB_MXC_HDMI
+	bool "Force Hot Plug Detect on HDMI"
+	help
+	  Force the presence of an attached HDMI Panel regardless
+	  of the signal present in hpdetect pin.
+
 config FB_MXC_EINK_PANEL
 	depends on FB_MXC
 	depends on DMA_ENGINE
