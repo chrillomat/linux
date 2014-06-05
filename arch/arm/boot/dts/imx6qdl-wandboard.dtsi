@@ -456,8 +456,9 @@ reference manual.
 
 &uart1 {
 	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_uart1_1>;
-	status = "okay";
+	pinctrl-0 = <&pinctrl_uart1_3>;
+	fsl,uart-has-rtscts;
+        status = "okay";
 };
 
 &uart3 {
