@@ -229,12 +229,6 @@
 	status = "okay";
 };
 
-&hdmi_cec {
-        pinctrl-names = "default";
-        pinctrl-0 = <&pinctrl_hdmi_cec_2>;
-        status = "okay";
-};
-
 &i2c1 {
 	clock-frequency = <100000>;
 	pinctrl-names = "default";
